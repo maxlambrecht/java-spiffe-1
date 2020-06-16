@@ -42,11 +42,10 @@ subprojects {
     }
 
     jacocoTestReport {
-        dependsOn test // tests are required to run before generating the report
+        dependsOn test
         reports {
-            xml.enabled false
-            csv.enabled false
-            html.destination file("${buildDir}/jacocoHtml")
+            xml.enabled true
+            html.enabled true
         }
 
         afterEvaluate {
@@ -56,15 +55,10 @@ subprojects {
         }
     }
 
-    jacoco {
-        toolVersion = "0.8.5"
-        reportsDir = file("$buildDir/customJacocoReportDir")
-    }
-
     test {
         testLogging {
             afterSuite { desc, result ->
-                if (!desc.parent) { // will match the outermost suite
+                if (!desc.parent) {
                     println "Results: ${result.resultType} (${result.testCount} tests, ${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)"
                 }
             }

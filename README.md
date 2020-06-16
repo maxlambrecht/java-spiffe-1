@@ -1,5 +1,8 @@
 # JAVA-SPIFFE library
 
+<a href='https://travis-ci.org/spiffe/java-spiffe.svg?branch=master'><img src='https://travis-ci.org/spiffe/java-spiffe.svg?branch=master'></a>
+[![codecov](https://codecov.io/gh/spiffe/java-spiffe/branch/master/graph/badge.svg)](https://codecov.io/gh/spiffe/java-spiffe)
+
 ## Overview
 
 The JAVA-SPIFFE library provides functionality to interact with the Workload API to fetch X.509 and JWT SVIDs and Bundles, 
